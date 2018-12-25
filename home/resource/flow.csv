@@ -1,0 +1,352 @@
+
+# KEY,PROPERTYTYPE,PROPERTYNAME,PROPERTYVALUE,CONFIGURABLE,EDITED,DESCRIPTION,CustomerId
+CONNECTIVITY,SPISERVER,DEBUG_LOG_LEVELS,0 1 2,1,0,0=Errors; 1=Warnings; 2=Status,DEFAULT
+CONNECTIVITY,SPISERVER,LOG_FILE,./logs/viru_connectivity.log,1,0,Name of log file,DEFAULT
+CONNECTIVITY,SPISERVER,MAX_DEBUG_WRITES,100000,1,0,Maximum number of log messages to write before changing log files,DEFAULT
+CONNECTIVITY,SPISERVER,NAME,Nightfire.SPIServer.CONNECTIVITY,0,0,Name of SPI,DEFAULT
+CONNECTIVITY,SPISERVER,ORBagentAddr,127.0.0.1,1,0,Address of CORBA ORB,DEFAULT
+CONNECTIVITY,SPISERVER,ORBagentPort,14000,1,0,Address of CORBA Port,DEFAULT
+CONNECTIVITY,SPISERVER,SUPERVISOR_KEY,CONNECTIVITY,0,0,The key for the Supervisor to find its properties.,DEFAULT
+CONNECTIVITY,SPISERVER,SUPERVISOR_TYPE,SUPERVISOR,0,0,The type for the supervisor to find its properties.,DEFAULT
+CONNECTIVITY,SPISERVER,MORE_PROPERTIES_KEY,COMMON_PROPERTIES,0,0,The key for common properties.,DEFAULT
+CONNECTIVITY,SPISERVER,MORE_PROPERTIES_TYPE,COMMON_PROPERTIES,0,0,The type for common properties.,DEFAULT
+#
+SERVER_MANAGER,CONNECTIVITY,CLASS_NAME,com.nightfire.spi.common.supervisor.SPIServer,0,0,Fully qualified class name,DEFAULT
+SERVER_MANAGER,CONNECTIVITY,SERVER_HOST,127.0.0.1,1,0,IP Address of the machine where this server is running,DEFAULT
+SERVER_MANAGER,CONNECTIVITY,SERVER_KEY,CONNECTIVITY,0,0,Property key to be used for loading persistent properties,DEFAULT
+SERVER_MANAGER,CONNECTIVITY,SERVER_TYPE,SPISERVER,0,0,Property type to be used for loading persistent properties,DEFAULT
+SERVER_MANAGER,CONNECTIVITY,SERVER_LABEL,SOA Connectivity Server,0,0,Label which is displayed in the GUI of server manager,DEFAULT
+#
+CONNECTIVITY,SUPERVISOR,COMM_SERVER_CLASS_0,com.nightfire.spi.viru_soa.adapter.CHComServer,0,0,Java class for communications,DEFAULT
+CONNECTIVITY,SUPERVISOR,COMM_SERVER_KEY_0,CONNECTIVITY,0,0,Key to look up communication properties,DEFAULT
+CONNECTIVITY,SUPERVISOR,COMM_SERVER_TYPE_0,CH Com Server,0,0,Type to look up communication properties,DEFAULT
+CONNECTIVITY,SUPERVISOR,COMM_SERVER_CLASS_1,com.nightfire.spi.viru_soa.queue.CHPollerServer,0,0,Java class for communications,DEFAULT
+CONNECTIVITY,SUPERVISOR,COMM_SERVER_KEY_1,CONNECTIVITY,0,0,Key to look up communication properties,DEFAULT
+CONNECTIVITY,SUPERVISOR,COMM_SERVER_TYPE_1,CHQueuePoller,0,0,Type to look up communication properties,DEFAULT
+
+
+CONNECTIVITY,CH Com Server,NAME,CH Com Server,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,CH Com Server,DRIVER_KEY,CONNECTIVITY,0,0,Key to look up driver properties,DEFAULT
+CONNECTIVITY,CH Com Server,DRIVER_TYPE,CH_MESSAGE_RECEIVER,0,0,Type to look up driver properties,DEFAULT
+CONNECTIVITY,CH Com Server,CH_PROJECT,OSSGW_DEV1,1,0,The name of the SmartSockets' project in which the CH OSS Gateway will be running.,DEFAULT
+CONNECTIVITY,CH Com Server,CH_RTSERVER,10.31.19.34,1,0,The name of the host where CH's RTServer is running.,DEFAULT
+CONNECTIVITY,CH Com Server,CH_SUBJECT,OSSGW_S1501,1,0,The subject where CH SmartSockets requests will be sent.  CH provides this value.,DEFAULT
+CONNECTIVITY,CH Com Server,SOA_UNIQUE_SUBJECT,SOA_15_1111_816,1,0,The unique subject which will be placed in the ReplyTo field in all messages.,DEFAULT
+CONNECTIVITY,CH Com Server,CH_USER,ossgwclient,1,0,The username for logging into the CH RTServer.,DEFAULT
+CONNECTIVITY,CH Com Server,CH_PASSWORD,0ssgwClient1,1,0,The password for logging into the CH RTServer.,DEFAULT
+CONNECTIVITY,CH Com Server,KEEP_ALIVE_INTERVAL,180,1,0,This is the time period (in seconds) that the keep alive thread should sleep between sending keep alive requests for active sessions. ,DEFAULT
+CONNECTIVITY,CH Com Server,RECOVERY_INTERVAL,60,1,0,This is the window of time (in minutes) that will be used in calculating the start/stop times for download requests.,DEFAULT
+CONNECTIVITY,CH Com Server,MESSAGE_RESENT_TIME,2880,1,0,CH Queue messsages which lies between current datetime and resent datetime will be picked up for further processing.,DEFAULT
+CONNECTIVITY,CH Com Server,INVOKE_ID_SEQUENCE,VIRUFULLSOAMSGKEY,0,0,The name of the database sequence from which the next invoke ID will be retrieved for a send message.,DEFAULT
+CONNECTIVITY,CH Com Server,LAST_NOTIFICATION_TIME_TABLE,LAST_CH_RESPONSE_TIME,0,0,This is the name of the table in which the last notification time for a particular secondary SPID and region will get logged.,DEFAULT
+CONNECTIVITY,CH Com Server,DEFAULT_PRIMARY_SPID,1111,1,0,This property contains the name of the default primary SPID that will get associated with a secondary SPID if it does not have an explicitly configured primary SPID defined in the iterative properties. ,DEFAULT
+CONNECTIVITY,CH Com Server,RETRY_INTERVAL,180,1,0,This is the interval of time (in seconds) that the adapter will wait before resending a failed request (e.g. NewSession).,DEFAULT
+CONNECTIVITY,CH Com Server,RESEND_INTERVAL,900,1,0,This is the interval of time (in seconds) that the adapter will wait before resending a request that received no reply from the CH.,DEFAULT
+CONNECTIVITY,CH Com Server,RECOVERY_PADDING,0,0,0,This buffer (in minutes) will be subtracted from the last known notification time when performing recovery.,DEFAULT
+CONNECTIVITY,CH Com Server,SOA_SUBJECT_0,SOA_15_1111,1,0,The subjects are where CH will send CH-originated messages.  CH provides this value.,DEFAULT
+CONNECTIVITY,CH Com Server,SECONDARY_SPID_0,1111,1,0,Each secondary SPID identifies a particular customer.,DEFAULT
+CONNECTIVITY,CH Com Server,PRIMARY_SPID_0,1111,1,0,This iterating property will get matched up with the SECONDARY_SPID with the same iterative index. (e.g. PRIMARY_SPID_2 is the primary SPID for SECONDARY_SPID_2). If not primary SPID is specified for a secondary SPID; then the value of the DEFAULT_PRIMARY,DEFAULT
+CONNECTIVITY,CH Com Server,REGION0_0,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 0. So; for example; if the value of REGION0_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 0. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION1_0,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 1. So; for example; if the value of REGION1_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 1. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION2_0,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 2. So; for example; if the value of REGION2_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 2. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION3_0,TRUE,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 3. So; for example; if the value of REGION3_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 3. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION4_0,TRUE,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 4. So; for example; if the value of REGION4_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 4. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION5_0,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 5. So; for example; if the value of REGION5_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 5. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION6_0,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 6. So; for example; if the value of REGION6_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 6. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION7_0,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 7. So; for example; if the value of REGION7_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 6. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,SOA_SUBJECT_1,SOA_XX_XXXX,1,0,The subjects are where CH will send CH-originated messages.  CH provides this value.,DEFAULT
+CONNECTIVITY,CH Com Server,SECONDARY_SPID_1,,1,0,Each secondary SPID identifies a particular customer.,DEFAULT
+CONNECTIVITY,CH Com Server,PRIMARY_SPID_1,,1,0,This iterating property will get matched up with the SECONDARY_SPID with the same iterative index. (e.g. PRIMARY_SPID_2 is the primary SPID for SECONDARY_SPID_2). If not primary SPID is specified for a secondary SPID; then the value of the DEFAULT_PRIMARY,DEFAULT
+CONNECTIVITY,CH Com Server,REGION0_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 0. So; for example; if the value of REGION0_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 0. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION1_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 1. So; for example; if the value of REGION1_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 1. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION2_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 2. So; for example; if the value of REGION2_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 2. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION3_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 3. So; for example; if the value of REGION3_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 3. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION4_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 4. So; for example; if the value of REGION4_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 4. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION5_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 5. So; for example; if the value of REGION5_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 5. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION6_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 6. So; for example; if the value of REGION6_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 6. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION7_1,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 7. So; for example; if the value of REGION7_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 6. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,SOA_SUBJECT_2,SOA_XX_XXXX,1,0,The subjects are where CH will send CH-originated messages.  CH provides this value.,DEFAULT
+CONNECTIVITY,CH Com Server,SECONDARY_SPID_2,,1,0,Each secondary SPID identifies a particular customer.,DEFAULT
+CONNECTIVITY,CH Com Server,PRIMARY_SPID_2,,1,0,This iterating property will get matched up with the SECONDARY_SPID with the same iterative index. (e.g. PRIMARY_SPID_2 is the primary SPID for SECONDARY_SPID_2). If not primary SPID is specified for a secondary SPID; then the value of the DEFAULT_PRIMARY,DEFAULT
+CONNECTIVITY,CH Com Server,REGION0_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 0. So; for example; if the value of REGION0_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 0. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION1_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 1. So; for example; if the value of REGION1_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 1. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION2_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 2. So; for example; if the value of REGION2_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 2. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION3_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 3. So; for example; if the value of REGION3_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 3. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION4_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 4. So; for example; if the value of REGION4_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 4. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION5_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 5. So; for example; if the value of REGION5_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 5. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION6_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 6. So; for example; if the value of REGION6_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 6. The default v",DEFAULT
+CONNECTIVITY,CH Com Server,REGION7_2,false,1,0,"This iterating boolean (true/false) property indicates whether the corresponding SECONDARY_SPID supports CH region 7. So; for example; if the value of REGION7_4 is ""true""; then the SPID defined in SECONDARY_SPID_4 is supported in region 6. The default v",DEFAULT
+#
+CONNECTIVITY,CH_MESSAGE_RECEIVER,ASYNC_FLAG,true,0,0,Is this server asynchronous?,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_0,com.nightfire.adapter.messageprocessor.XMLCopier,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_0,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_0,AddHeader2Msg,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_1,com.nightfire.adapter.messageprocessor.DatabaseLogger,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_1,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_1,BatchResLogger,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_2,com.nightfire.adapter.messageprocessor.TestAndRoute,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_2,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_2,CheckForBatchedRecovery,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_3,com.nightfire.adapter.messageprocessor.TestAndRoute,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_3,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_3,CheckNTNotifications,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_4,com.nightfire.adapter.messageprocessor.TestAndRoute,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_4,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_4,CheckSOANTFlag,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_5,com.nightfire.adapter.messageprocessor.NullProcessor,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_5,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_5,DoNothing,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_6,com.nightfire.adapter.messageprocessor.DatabaseLogger,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_6,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_6,DownloadRecoveryBatchLogger,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_7,com.nightfire.comms.jms.JMSQueueProducer,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_7,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_7,EnqueueSOANTQ,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_8,com.nightfire.adapter.messageprocessor.DBSelectQuery,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_8,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_8,GetSOANTFlag,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_9,com.nightfire.adapter.messageprocessor.ConditionalRouter,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_9,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_9,IgnoreRecoverySuccessNode,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_10,com.nightfire.spi.viru_soa.adapter.messageprocessor.SOAQueueLogger,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_10,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_10,SOAQueueLogger,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_11,com.nightfire.spi.viru_soa.adapter.messageprocessor.SOAXMLBatchSeparator,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_11,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_11,SOAXMLBatchSeparator,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_12,com.nightfire.adapter.messageprocessor.XMLMessageSeparator,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_12,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_12,SeparateHeader,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_13,com.nightfire.spi.viru_soa.adapter.messageprocessor.GetAndSetText,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_13,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_13,SetHeaderData,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_14,com.nightfire.adapter.messageprocessor.XSLTMessageProtocolAdapter,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_14,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_14,TransformDownloadRecovery,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_15,com.nightfire.spi.viru_soa.adapter.messageprocessor.XMLRootChanger,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_15,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_15,XMLRootChangerDownloadRecovery,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,CLASS_16,com.nightfire.spi.viru_soa.adapter.messageprocessor.GetAndSetText,0,0,Component Java class.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,KEY_16,CONNECTIVITY,0,0,Key to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,TYPE_16,SetStatus,0,0,Type to look up component properties.,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,ERROR_PROCESSOR_CLASS_NAME,com.nightfire.comms.file.AsyncFileClient,0,0,,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,ERROR_PROCESSOR_KEY,CONNECTIVITY,0,0,,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,ERROR_PROCESSOR_TYPE,FileClient,0,0,,DEFAULT
+CONNECTIVITY,CH_MESSAGE_RECEIVER,ERROR_CONTEXT_LOCATION,DEFAULT_ERROR_CONTEXT_LOCATION,0,0,,DEFAULT
+#
+CONNECTIVITY,WriteErrorsToFile,NEXT_PROCESSOR_NAME,NOBODY,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,WriteErrorsToFile,NAME,WriteErrorsToFile,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,WriteErrorsToFile,TARGET_DIR,./gateways/viru-soa/runtime/error,1,0,Directory to write the file to.,DEFAULT
+CONNECTIVITY,WriteErrorsToFile,TARGET_FILE,connectivity,1,0,Name of the file to write.,DEFAULT
+CONNECTIVITY,WriteErrorsToFile,TARGET_SUFFIX,.xml,1,0,Suffix value used in file name construction. (Ex: .txt),DEFAULT
+CONNECTIVITY,WriteErrorsToFile,APPEND_FLAG,false,1,0,Flag indicating whether processor's input should be appended to the indicated file or should replace the file's contents if the file already exists.,DEFAULT
+CONNECTIVITY,WriteErrorsToFile,BINARY_MODE,false,1,0,Flag indicating whether processor's input should be treated as binary or text data.,DEFAULT
+#
+# Get the message header XML content from context and add the same with the
+# message content.
+#
+CONNECTIVITY,AddHeader2Msg,NEXT_PROCESSOR_NAME,IgnoreRecoverySuccessNode,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,AddHeader2Msg,NAME,AddHeader2Msg,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,AddHeader2Msg,XML_SOURCE_LOCATION_0,@context.MESSAGE_HEADER,0,0,The location of the source XML document to insert into the target XML document.,DEFAULT
+CONNECTIVITY,AddHeader2Msg,XML_TARGET_LOCATION_0,INPUT_MESSAGE,0,0,The location of the target XML document to populate from the source XML document.,DEFAULT
+CONNECTIVITY,AddHeader2Msg,INSERT_LOCATION_0,,0,0,The location in the context or input containing the value indicating the point at which the source XML document should be inserted (in dotted notation form).,DEFAULT
+CONNECTIVITY,AddHeader2Msg,USE_TARGET_NAME_COMPARISON_0,true,0,0,Property indicating whether blind copying should be done or whether a node name comparison should be done while copying the xml document to a particular location.,DEFAULT
+CONNECTIVITY,AddHeader2Msg,DEFAULT_INSERT_LOCATION_0,.,0,0,The default insertion location to use if the dynamic insertion location value is not present(in dotted-text form).,DEFAULT
+CONNECTIVITY,AddHeader2Msg,OPTIONAL_0,false,0,0,Flag indicating whether the source XML document is required or not. If 'false' and no value is obtained; then an exception is thrown. If 'true' and no value is obtained; then this document copy operation is skipped.,DEFAULT
+#
+# This logs the batched reply as a whole. 
+#
+CONNECTIVITY,BatchResLogger,NEXT_PROCESSOR_NAME,SeparateHeader,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,BatchResLogger,NAME,BatchResLogger,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,BatchResLogger,TABLE_NAME,CH_MESSAGE,0,0,Name of the database table to insert a row into.,DEFAULT
+CONNECTIVITY,BatchResLogger,TRANSACTIONAL_LOGGING,TRUE,0,0,Flag indicating whether this component should participate in the global driver transaction (TRUE); or should create its own transaction (FALSE).,DEFAULT
+CONNECTIVITY,BatchResLogger,SEPARATOR,|,0,0,Token separating name alternatives in LOCATION property.  If not set; the '|' character is used (default).,DEFAULT
+CONNECTIVITY,BatchResLogger,USE_CUSTOMER_ID,FALSE,0,0,Flag indicating whether the CustomerId should be used implicity in the query(TRUE); or the query should be used as-is(FALSE).,DEFAULT
+CONNECTIVITY,BatchResLogger,COLUMN_0,MESSAGEKEY,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,BatchResLogger,LOCATION_0,@context.InvokeId,0,0,"Value contains 1 or more names indicating values in the context or input message-object; separated by the token indicated by the SEPARATOR property.  A value of ""INPUT_MESSAGE"" maps to the entire contents of the message-object.",DEFAULT
+CONNECTIVITY,BatchResLogger,OPTIONAL_0,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+CONNECTIVITY,BatchResLogger,COLUMN_1,MESSAGETYPE,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,BatchResLogger,DEFAULT_1,Response,0,0,"Value to be used if no value is obtained by searching for items indicated in the LOCATION_# property.  If the column is of type DATE; a value of ""SYSDATE"" will cause the logger to use the current system date/time for the column's value.",DEFAULT
+CONNECTIVITY,BatchResLogger,OPTIONAL_1,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+CONNECTIVITY,BatchResLogger,COLUMN_2,DATETIME,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,BatchResLogger,COLUMN_TYPE_2,DATE,0,0,Type of data.  If value is present; it must be one of: DATE; TEXT_BLOB; BINARY_BLOB. If no value is present; the value is interpreted using the rules specified by the PreparedStatement.setObject() method.  NOTE: For TEXT_BLOB types; the Oracle SQL column ,DEFAULT
+CONNECTIVITY,BatchResLogger,DATE_FORMAT_2,MM-dd-yyyy,0,0,If the column type is DATE and the value is not SYSDATE; the date-format string specifies the format of the value.  The format string should use the formatting constants described for the java.text.SimpleDateFormat class.,DEFAULT
+CONNECTIVITY,BatchResLogger,DEFAULT_2,SYSDATE,0,0,"Value to be used if no value is obtained by searching for items indicated in the LOCATION_# property.  If the column is of type DATE; a value of ""SYSDATE"" will cause the logger to use the current system date/time for the column's value.",DEFAULT
+CONNECTIVITY,BatchResLogger,OPTIONAL_2,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+CONNECTIVITY,BatchResLogger,COLUMN_3,MESSAGE,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,BatchResLogger,COLUMN_TYPE_3,TEXT_BLOB,0,0,Type of data.  If value is present; it must be one of: DATE; TEXT_BLOB; BINARY_BLOB. If no value is present; the value is interpreted using the rules specified by the PreparedStatement.setObject() method.  NOTE: For TEXT_BLOB types; the Oracle SQL column ,DEFAULT
+CONNECTIVITY,BatchResLogger,LOCATION_3,INPUT_MESSAGE,0,0,"Value contains 1 or more names indicating values in the context or input message-object; separated by the token indicated by the SEPARATOR property.  A value of ""INPUT_MESSAGE"" maps to the entire contents of the message-object.",DEFAULT
+CONNECTIVITY,BatchResLogger,OPTIONAL_3,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+#
+# This checks to see if the CH message is a recovery reply. 
+#
+CONNECTIVITY,CheckForBatchedRecovery,NEXT_PROCESSOR_NAME,BatchResLogger|DownloadRecoveryBatchLogger|SOAQueueLogger,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,NAME,CheckForBatchedRecovery,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,DEFAULT_NEXT_PROCESSOR,SOAQueueLogger,0,0,The default processor to route to when all conditions are false.,DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,THROW_EXCEPTION_FOR_NO_ROUTE_FLAG,true,0,0,If set to true; an exception will be thrown when all conditions are false and a default next processor isn't specified.,DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,TEST_0,messageContent.CHtoSOA.RecoveryReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,NEXT_PROCESSOR_0,BatchResLogger,0,0,The name of the next processor to send the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,TEST_1,messageContent.CHtoSOA.DownloadRecoveryReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckForBatchedRecovery,NEXT_PROCESSOR_1,DownloadRecoveryBatchLogger,0,0,The name of the next processor to send the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+#
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_NAME,DoNothing|GetSOANTFlag,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,NAME,CheckNTNotifications,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,DEFAULT_NEXT_PROCESSOR,DoNothing,0,0,The default processor to route to when all conditions are false.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_0,messageContent.CHtoSOA.RecoveryReply.VersionCustomerDisconnectDateRecovery,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_0,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_1,@context.NpacSvStatus=active|old,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_1,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_2,messageContent.CHtoSOA.SubscriptionVersionQueryReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_2,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_3,messageContent.CHtoSOA.RecoveryReply.VersionAttributeValueChangeRecovery,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_3,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_4,messageContent.CHtoSOA.VersionCustomerDisconnectDateInfoNotification,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_4,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_5,messageContent.CHtoSOA.VersionAttributeValueChangeNotification,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_5,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_6,messageContent.CHtoSOA.NewSP_CreateReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_6,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_7,messageContent.CHtoSOA.CancelActionReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_7,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_8,messageContent.CHtoSOA.ModifyActionReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_8,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+CONNECTIVITY,CheckNTNotifications,TEST_9,messageContent.CHtoSOA.DisconnectActionReply,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckNTNotifications,NEXT_PROCESSOR_9,GetSOANTFlag,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+#
+CONNECTIVITY,CheckSOANTFlag,NEXT_PROCESSOR_NAME,DoNothing|EnqueueSOANTQ,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,CheckSOANTFlag,NAME,CheckSOANTFlag,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,CheckSOANTFlag,DEFAULT_NEXT_PROCESSOR,DoNothing,0,0,The default processor to route to when all conditions are false.,DEFAULT
+CONNECTIVITY,CheckSOANTFlag,TEST_0,@context.AllowNTFeatureFlag.ALLOWSOANTFLAG=1,0,0,"The condition to evaluate.  Conditions can be in one of two forms:  A dotted-text name by itself; which indicates an existence check; or a dotted-text name + ""="" + a text literal or the location of a text literal in the MessageProcessorContext or MessageO",DEFAULT
+CONNECTIVITY,CheckSOANTFlag,USE_REGEX_0,,0,0,Boolean flag indicating whether the string to evaluate against is a value (or list of values); or a regular expression. By default; set to false.,DEFAULT
+CONNECTIVITY,CheckSOANTFlag,NEXT_PROCESSOR_0,EnqueueSOANTQ,0,0,The name of the next processor to route the input message to if the corresponding condition evaluates to 'true'.,DEFAULT
+#
+CONNECTIVITY,DoNothing,NEXT_PROCESSOR_NAME,NOBODY,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,DoNothing,NAME,DoNothing,0,0,Name used by the driver to address messages to this component.,DEFAULT
+#
+CONNECTIVITY,DownloadRecoveryBatchLogger,NEXT_PROCESSOR_NAME,XMLRootChangerDownloadRecovery,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,NAME,DownloadRecoveryBatchLogger,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,TABLE_NAME,CH_MESSAGE,0,0,Name of the database table to insert a row into.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,TRANSACTIONAL_LOGGING,TRUE,0,0,Flag indicating whether this component should participate in the global driver transaction (TRUE); or should create its own transaction (FALSE).,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,SEPARATOR,|,0,0,Token separating name alternatives in LOCATION property.  If not set; the '|' character is used (default).,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,USE_CUSTOMER_ID,FALSE,0,0,Flag indicating whether the CustomerId should be used implicity in the query(TRUE); or the query should be used as-is(FALSE).,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,COLUMN_0,MESSAGEKEY,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,LOCATION_0,@context.InvokeId,0,0,"Value contains 1 or more names indicating values in the context or input message-object; separated by the token indicated by the SEPARATOR property.  A value of ""INPUT_MESSAGE"" maps to the entire contents of the message-object.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,OPTIONAL_0,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,COLUMN_1,MESSAGETYPE,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,DEFAULT_1,Response,0,0,"Value to be used if no value is obtained by searching for items indicated in the LOCATION_# property.  If the column is of type DATE; a value of ""SYSDATE"" will cause the logger to use the current system date/time for the column's value.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,OPTIONAL_1,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,COLUMN_2,DATETIME,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,COLUMN_TYPE_2,DATE,0,0,Type of data.  If value is present; it must be one of: DATE; TEXT_BLOB; BINARY_BLOB. If no value is present; the value is interpreted using the rules specified by the PreparedStatement.setObject() method.  NOTE: For TEXT_BLOB types; the Oracle SQL column ,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,DATE_FORMAT_2,MM-dd-yyyy,0,0,If the column type is DATE and the value is not SYSDATE; the date-format string specifies the format of the value.  The format string should use the formatting constants described for the java.text.SimpleDateFormat class.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,DEFAULT_2,SYSDATE,0,0,"Value to be used if no value is obtained by searching for items indicated in the LOCATION_# property.  If the column is of type DATE; a value of ""SYSDATE"" will cause the logger to use the current system date/time for the column's value.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,OPTIONAL_2,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,COLUMN_3,MESSAGE,0,0,Name of the database column to insert value into.,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,COLUMN_TYPE_3,TEXT_BLOB,0,0,Type of data.  If value is present; it must be one of: DATE; TEXT_BLOB; BINARY_BLOB. If no value is present; the value is interpreted using the rules specified by the PreparedStatement.setObject() method.  NOTE: For TEXT_BLOB types; the Oracle SQL column ,DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,LOCATION_3,INPUT_MESSAGE,0,0,"Value contains 1 or more names indicating values in the context or input message-object; separated by the token indicated by the SEPARATOR property.  A value of ""INPUT_MESSAGE"" maps to the entire contents of the message-object.",DEFAULT
+CONNECTIVITY,DownloadRecoveryBatchLogger,OPTIONAL_3,FALSE,0,0,"Indicates whether column value must be present or not.  If the value is required (""FALSE"") and is not present; an exception will be thrown.",DEFAULT
+#
+CONNECTIVITY,EnqueueSOANTQ,NEXT_PROCESSOR_NAME,NOBODY,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,NAME,EnqueueSOANTQ,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,QUEUE_NAME,SOA_NT_RESPONSE_Q,1,0,Queue Name to which the messages have to be sent.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,LOOKUP_DOMAIN_API_FLAG,false,1,0,flag indicating if DOMAIN table is to be looked up to check if customer being processed is an API customer or not.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,ALTERNATE_DB_POOL_KEY_LOC,@context.NTDBPool,1,0,DB Pool key for alternate database connection,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_NAME_0,MESSAGEINFO,1,0,Message header property Name to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_DEFAULT_VALUE_0,CHResponse,1,0,Message header property default value to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,OPTIONAL_0,false,1,0,Indicates whether Message header property value should exists. By default it is false.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_NAME_1,InvokeId,1,0,Message header property Name to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_VALUE_LOC_1,@context.InvokeId,1,0,Location of Message header property value to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,OPTIONAL_1,false,1,0,Indicates whether Message header property value should exists. By default it is false.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_NAME_2,ResponseSPID,1,0,Message header property Name to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_VALUE_LOC_2,@context.ResponseSPID,1,0,Location of Message header property value to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,OPTIONAL_2,false,1,0,Indicates whether Message header property value should exists. By default it is false.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_NAME_3,RegionId,1,0,Message header property Name to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_VALUE_LOC_3,@context.RegionId,1,0,Location of Message header property value to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,OPTIONAL_3,false,1,0,Indicates whether Message header property value should exists. By default it is false.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_NAME_4,NpacSvStatus,1,0,Message header property Name to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,MESSAGE_PROPERTY_VALUE_LOC_4,@context.NpacSvStatus,1,0,Location of Message header property value to be set.,DEFAULT
+CONNECTIVITY,EnqueueSOANTQ,OPTIONAL_4,true,1,0,Indicates whether Message header property value should exists. By default it is false.,DEFAULT
+#
+CONNECTIVITY,GetSOANTFlag,NEXT_PROCESSOR_NAME,CheckSOANTFlag,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,GetSOANTFlag,NAME,GetSOANTFlag,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,GetSOANTFlag,TABLE_NAME,SOA_NANC_SUPPORT_FLAGS,0,0,Name of table to perform query against.  Used as root-node name in generated XML.,DEFAULT
+CONNECTIVITY,GetSOANTFlag,SQL_QUERY_STATEMENT,SELECT ALLOWSOANTFLAG from SOA_NANC_SUPPORT_FLAGS where SPID=?,0,0,SQL SELECT statement used to create prepared-statement object.  Should have '?' placeholders in WHERE-clause for values that need to be dynamically populated.,DEFAULT
+CONNECTIVITY,GetSOANTFlag,RESULT_LOCATION,@context.AllowNTFeatureFlag,0,0,The name of the location into which the result should be placed.,DEFAULT
+CONNECTIVITY,GetSOANTFlag,OUTPUT_DATE_FORMAT,MM-dd-yyyy,0,0,Used to format any returned date values.,DEFAULT
+CONNECTIVITY,GetSOANTFlag,USE_CUSTOMER_ID,false,0,0,Flag indicating whether the CustomerId should be used implicity in the query(TRUE); or the query should be used as-is(FALSE).,DEFAULT
+CONNECTIVITY,GetSOANTFlag,USE_SUBDOMAIN_ID,false,0,0,Flag indicating whether the SubDomainId should be used implicity in the query(TRUE); or the query should be used as-is(FALSE).,DEFAULT
+CONNECTIVITY,GetSOANTFlag,LOCATION_0,@context.ResponseSPID,0,0,Location of the column value in the context/input.,DEFAULT
+#
+# The first node of the batch reply will not be a notification message, but
+# instead a node containing the status of the reply. This ignores that node. 
+#
+CONNECTIVITY,IgnoreRecoverySuccessNode,NEXT_PROCESSOR_NAME,DoNothing|SOAQueueLogger,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,IgnoreRecoverySuccessNode,NAME,IgnoreRecoverySuccessNode,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,IgnoreRecoverySuccessNode,NEXT_PROCESSOR_IF_FALSE,DoNothing,0,0,The name of the next processor if this processor evaluates the condition to be false.,DEFAULT
+CONNECTIVITY,IgnoreRecoverySuccessNode,NEXT_PROCESSOR_IF_TRUE,SOAQueueLogger,0,0,The name of the next processor if this processor evaluates the condition to be true.,DEFAULT
+CONNECTIVITY,IgnoreRecoverySuccessNode,NODE_NAME,messageContent.CHtoSOA.RecoveryReply.0,1,0,The name of at least one node that must exist in the Document found at the INPUT_MESSAGE_LOCATION. If any of the nodes listed by this property exist; then the condition will be evaluated as true; unless the NODE_VALUE property specifies that this node mus,DEFAULT
+CONNECTIVITY,IgnoreRecoverySuccessNode,SEPARATOR,|,1,0,The value (one character) that should be used to delimit the lists of values that may be found in the NODE_NAME and NODE_VALUE properties.,DEFAULT
+#
+CONNECTIVITY,SOAQueueLogger,NEXT_PROCESSOR_NAME,SetStatus,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,SOAQueueLogger,NAME,SOAQueueLogger,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,SOAQueueLogger,MESSAGE_LOCATION,INPUT_MESSAGE,0,0,The location of INPUT_MESSAGE,DEFAULT
+CONNECTIVITY,SOAQueueLogger,TRANSACTIONAL_LOGGING,TRUE,0,0,Flag indicating whether this component should participate in the global driver transaction (TRUE); or should create its own transaction (FALSE).,DEFAULT
+CONNECTIVITY,SOAQueueLogger,REGIONID_LOCATION,@context.RegionId,0,0,The location of RegionID in input Message,DEFAULT
+CONNECTIVITY,SOAQueueLogger,SPID_LOCATION,@context.ResponseSPID,0,0,The location of SPID in input Message,DEFAULT
+CONNECTIVITY,SOAQueueLogger,DELAY,6,0,0,The location of DELAY property which is to be added in ARRIVALTIME. This should be set with the value of TIMER property in SOA_RESPONSE_ROUTER + 1. Example: If TIMER property of SOA_RESPONSE_ROUTER is configured with value 5 then it should be configured w,DEFAULT
+CONNECTIVITY,SOAQueueLogger,DISCONNECT_NOTIFICATION_DELAY,120,0,0,The DELAY property (in seconds) for Disconnect Notification which is to be added in ARRIVALTIME.The time configured in this property will be added in ARRIVALTIME for Disconnect Notification and Disconnect Notification will be delayed by this time ,DEFAULT
+#
+CONNECTIVITY,SOAXMLBatchSeparator,NEXT_PROCESSOR_NAME,AddHeader2Msg,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,SOAXMLBatchSeparator,NAME,SOAXMLBatchSeparator,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,SOAXMLBatchSeparator,INPUT_MESSAGE_LOCATION,INPUT_MESSAGE,0,0,The location of the original XML message which is to be split.,DEFAULT
+CONNECTIVITY,SOAXMLBatchSeparator,OUTPUT_ROOT_NODE,SOAMessage,0,0,The name of the root node for the output XML messages.,DEFAULT
+CONNECTIVITY,SOAXMLBatchSeparator,OUTPUT_BASE_NODE,messageContent.CHtoSOA.RecoveryReply,0,0,The starting node; in dotted notation; onto which a split node will be attached to create a new message.,DEFAULT
+CONNECTIVITY,SOAXMLBatchSeparator,BATCH_BASE_NODE,CHtoSOA.RecoveryReply,0,0,The starting node; in dotted notation; from which all child nodes will be made into individual new messages.,DEFAULT
+#
+# This separates out the header from the batch message.
+#
+CONNECTIVITY,SeparateHeader,NEXT_PROCESSOR_NAME,SOAXMLBatchSeparator,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,SeparateHeader,NAME,SeparateHeader,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,SeparateHeader,INPUT_MESSAGE_LOCATION,INPUT_MESSAGE,0,0,Location of input message in the input MessageObject. This is optional.,DEFAULT
+CONNECTIVITY,SeparateHeader,SOURCE_0,messageHeader,0,0,The XML node from which the sub-message will be retrieved.,DEFAULT
+CONNECTIVITY,SeparateHeader,TARGET_0,@context.MESSAGE_HEADER,0,0,The key for the sub-message in the internal table of the returning message object.,DEFAULT
+CONNECTIVITY,SeparateHeader,SOURCE_1,messageContent,0,0,The XML node from which the sub-message will be retrieved.,DEFAULT
+CONNECTIVITY,SeparateHeader,TARGET_1,INPUT_MESSAGE,0,0,The key for the sub-message in the internal table of the returning message object.,DEFAULT
+#
+# Gets certain header values from the text elements in the CH XML. 
+#
+CONNECTIVITY,SetHeaderData,NEXT_PROCESSOR_NAME,CheckForBatchedRecovery,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,SetHeaderData,NAME,ROOT,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,SetHeaderData,INPUT_LOC_0,messageHeader.invoke_id,0,0,'|'-delimited set of one or more XML node locations in dotted-text format giving the source value location.,DEFAULT
+CONNECTIVITY,SetHeaderData,OUTPUT_LOC_0,@context.InvokeId,0,0,XML node location in dotted-text format giving the value destination.,DEFAULT
+CONNECTIVITY,SetHeaderData,OPTIONAL_0,FALSE,0,0,Boolean flag indicating whether value is required or not.,DEFAULT
+CONNECTIVITY,SetHeaderData,INPUT_LOC_1,messageHeader.customer_id,0,0,'|'-delimited set of one or more XML node locations in dotted-text format giving the source value location.,DEFAULT
+CONNECTIVITY,SetHeaderData,OUTPUT_LOC_1,@context.ResponseSPID,0,0,XML node location in dotted-text format giving the value destination.,DEFAULT
+CONNECTIVITY,SetHeaderData,OPTIONAL_1,TRUE,0,0,Boolean flag indicating whether value is required or not.,DEFAULT
+CONNECTIVITY,SetHeaderData,INPUT_LOC_2,messageHeader.ch_region_id,0,0,'|'-delimited set of one or more XML node locations in dotted-text format giving the source value location.,DEFAULT
+CONNECTIVITY,SetHeaderData,OUTPUT_LOC_2,@context.RegionId,0,0,XML node location in dotted-text format giving the value destination.,DEFAULT
+CONNECTIVITY,SetHeaderData,OPTIONAL_2,TRUE,0,0,Boolean flag indicating whether value is required or not.,DEFAULT
+#
+CONNECTIVITY,TransformDownloadRecovery,NEXT_PROCESSOR_NAME,SeparateHeader,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,TransformDownloadRecovery,NAME,TransformDownloadRecovery,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,TransformDownloadRecovery,STYLE_SHEET,gateways/viru-soa/maps/DownloadRecovery.xsl,0,0,Pathname of the XSL stylesheet (or classname of compiled stylesheet) to be applied.,DEFAULT
+CONNECTIVITY,TransformDownloadRecovery,INPUT_LOCATION,INPUT_MESSAGE,0,0,Indicates where to take the input xml message from. If not defined; then the MessageObject is used.,DEFAULT
+CONNECTIVITY,TransformDownloadRecovery,OUTPUT_LOCATION,INPUT_MESSAGE,0,0,Indicates where to place the transformed xml message. If not defined; then returned as the MessageObject.,DEFAULT
+#
+CONNECTIVITY,XMLRootChangerDownloadRecovery,NEXT_PROCESSOR_NAME,TransformDownloadRecovery,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,XMLRootChangerDownloadRecovery,NAME,XMLRootChangerDownloadRecovery,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,XMLRootChangerDownloadRecovery,INPUT_MESSAGE,INPUT_MESSAGE,0,0,The location of the input message.,DEFAULT
+CONNECTIVITY,XMLRootChangerDownloadRecovery,INPUT_ROOT_NODE,"<SOAMessage xmlns=""urn:viru:lnp:soa:1.0"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"">",0,0,The name of the input root node.,DEFAULT
+CONNECTIVITY,XMLRootChangerDownloadRecovery,OUTPUT_ROOT_NODE,<SOAMessage>,0,0,The name of the output root node.,DEFAULT
+CONNECTIVITY,XMLRootChangerDownloadRecovery,OUTPUT_MESSAGE,INPUT_MESSAGE,0,0,The location of the output message.,DEFAULT
+#
+CONNECTIVITY,SetStatus,NEXT_PROCESSOR_NAME,CheckNTNotifications,0,0,The name of the processor that will receive the output of this processor.,DEFAULT
+CONNECTIVITY,SetStatus,NAME,SetStatus,0,0,Name used by the driver to address messages to this component.,DEFAULT
+CONNECTIVITY,SetStatus,INPUT_LOC_0,messageContent.CHtoSOA.VersionStatusAttributeValueChangeNotification.subscription_version_status,0,0,'|'-delimited set of one or more XML node locations in dotted-text format giving the source value location.,DEFAULT
+CONNECTIVITY,SetStatus,OUTPUT_LOC_0,@context.NpacSvStatus,0,0,XML node location in dotted-text format giving the value destination.,DEFAULT
+CONNECTIVITY,SetStatus,OPTIONAL_0,TRUE,0,0,Boolean flag indicating whether value is required or not.,DEFAULT
+CONNECTIVITY,SetStatus,INPUT_LOC_1,messageContent.CHtoSOA.RecoveryReply.VersionStatusAttributeValueChangeRecovery.subscription_version_status,0,0,'|'-delimited set of one or more XML node locations in dotted-text format giving the source value location.,DEFAULT
+CONNECTIVITY,SetStatus,OUTPUT_LOC_1,@context.NpacSvStatus,0,0,XML node location in dotted-text format giving the value destination.,DEFAULT
+CONNECTIVITY,SetStatus,OPTIONAL_1,TRUE,0,0,Boolean flag indicating whether value is required or not.,DEFAULT
+CONNECTIVITY,SetStatus,OUTPUT_LOC_2,@context.NTDBPool,0,0,XML node location in dotted-text format giving the value destination.,DEFAULT
+CONNECTIVITY,SetStatus,DEFAULT_2,NTDBPool,0,0,Default value to use if input source value is not available.,DEFAULT
+CONNECTIVITY,SetStatus,OPTIONAL_2,FALSE,0,0,Boolean flag indicating whether value is required or not.,DEFAULT
